@@ -8,7 +8,7 @@ public class AnalyticsCounter {
 
 	public static void main(String[] args) throws Exception {
 		// Definition of the input and output files
-		String symptomReadFile = ".\\Project02Eclipse\\symptoms0.txt";
+		String symptomReadFile = ".\\Project02Eclipse\\symptoms.txt";
 		String symptomCounterFile = ".\\Project02Eclipse\\result.out";
 
 		// CreatE a ArrayList containing all the lines of th input file
@@ -17,14 +17,11 @@ public class AnalyticsCounter {
 
 		// Sort and count the symptom
 		SymptomCounter symptomCounter = new SymptomCounter();
-		TreeMap<String, Integer> countedSymptom = symptomCounter.countSymptom(symptomList);
+		TreeMap<String, Integer> countedAndSortedSymptom = symptomCounter.countSymptom(symptomList);
 
 		// next generate output
-		FileWriter writer = new FileWriter (symptomCounterFile);
-		for (String symptom : countedSymptom.keySet()) {
-			writer.write(symptom+"="+countedSymptom.get(symptom)+"\n");
-		}
+		WriteSymptomCountToFile writeSymptom = new WriteSymptomCountToFile(symptomCounterFile);
+		writeSymptom.outSymptom(countedAndSortedSymptom);
 
-		writer.close();
 	}
 }
