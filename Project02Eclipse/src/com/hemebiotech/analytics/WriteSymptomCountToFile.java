@@ -2,7 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.TreeMap;
+import java.util.Map;
 
 /**
  * Simple brute force implementation
@@ -19,14 +19,14 @@ public class WriteSymptomCountToFile implements ISymptomWriter {
     }
     /**
      * Write in the result file the content of a TreeMap in the format "key=value" - one key per line.
-     * @param countedAndSortedSymptom The TreeMap to be written in the output file
+     * @param countedSymptom The TreeMap to be written in the output file
      */
-    public void outSymptom(TreeMap<String, Integer> countedAndSortedSymptom) {
+    public void outSymptom(Map<String, Integer> countedSymptom) {
         if (this.filepath != null) {
             try {
                 FileWriter writer = new FileWriter(this.filepath);
-                for (String symptom : countedAndSortedSymptom.keySet()) {
-                    writer.write(symptom + "=" + countedAndSortedSymptom.get(symptom) + "\n");
+                for (String symptom : countedSymptom.keySet()) {
+                    writer.write(symptom + "=" + countedSymptom.get(symptom) + "\n");
                 }
                 writer.close();
             } catch (IOException e) {

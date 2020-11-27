@@ -10,7 +10,7 @@ import java.util.TreeMap;
  * </p>
  *
  * @see ReadSymptomDataFromFile
- * @see SymptomCounter
+ * @see SymptomCounterAndSorter
  * @see WriteSymptomCountToFile
  */
 public class AnalyticsCounter {
@@ -25,8 +25,8 @@ public class AnalyticsCounter {
 		ArrayList<String> symptomList = (ArrayList<String>) readSymptom.getSymptoms();
 
 		// Sort and count the symptom
-		SymptomCounter symptomCounter = new SymptomCounter();
-		TreeMap<String, Integer> countedAndSortedSymptom = symptomCounter.countSymptom(symptomList);
+		SymptomCounterAndSorter symptomCounter = new SymptomCounterAndSorter();
+		TreeMap<String, Integer> countedAndSortedSymptom = symptomCounter.countAndSortSymptoms(symptomList);
 
 		// next generate output
 		WriteSymptomCountToFile writeSymptom = new WriteSymptomCountToFile(symptomCounterFile);
