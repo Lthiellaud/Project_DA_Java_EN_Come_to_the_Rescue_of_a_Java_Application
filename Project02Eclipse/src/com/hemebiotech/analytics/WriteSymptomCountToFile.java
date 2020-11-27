@@ -8,7 +8,7 @@ import java.util.TreeMap;
  * Simple brute force implementation
  *
  */
-public class WriteSymptomCountToFile {
+public class WriteSymptomCountToFile implements ISymptomWriter {
     private String filepath;
     /**
      *
@@ -19,6 +19,7 @@ public class WriteSymptomCountToFile {
     }
     /**
      * Write in the result file the content of a TreeMap in the format "key=value" - one key per line.
+     * @param countedAndSortedSymptom The TreeMap to be written in the output file
      */
     public void outSymptom(TreeMap<String, Integer> countedAndSortedSymptom) {
         if (this.filepath != null) {
@@ -30,6 +31,7 @@ public class WriteSymptomCountToFile {
                 writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
+                System.exit(-1);
             }
         }
     }

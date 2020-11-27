@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
- * Sorted HashMap giving for each symptom, the number of occurrences met in a list.
+ * Returns a Sorted Map giving for each symptom met in a list, its number of occurrences.
+ *
  */
 public class SymptomCounter {
-    //private TreeMap<String, Integer> symptomCounter = new TreeMap<>();
 
     /**
-     * @param symptomList list of strings that may contain many duplications.
      *
+     * @param symptomList list of symptom that may contain many duplications.
+     * @return a TreeMap (sorted map) giving for all symptom its number of occurrences in the list
      */
     public TreeMap<String, Integer> countSymptom (ArrayList<String> symptomList) {
         TreeMap<String, Integer> symptomCounter = new TreeMap<>();
