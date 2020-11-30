@@ -7,10 +7,10 @@ import java.util.Map;
  * The implementation need the input parameter to be a map
  *
  */
-public interface ISymptomWriter {
+public interface IDataWriter {
     /**
      *
-     * @param countedSymptom The Map to be written in the output file
+     * @param countedData The Map to be written in the output file
      */
-    void outSymptom(Map<String, Integer> countedSymptom);
+    void outSymptom(Map<String, Integer> countedData);
 }

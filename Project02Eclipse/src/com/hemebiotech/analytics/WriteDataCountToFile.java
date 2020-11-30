@@ -8,29 +8,30 @@ import java.util.Map;
  * Simple brute force implementation
  *
  */
-public class WriteSymptomCountToFile implements ISymptomWriter {
+public class WriteDataCountToFile implements IDataWriter {
     private String filepath;
     /**
      *
      * @param filepath a full or partial path to the result file
      */
-    WriteSymptomCountToFile(String filepath) {
+    WriteDataCountToFile(String filepath) {
         this.filepath=filepath;
     }
     /**
      * Write in the result file the content of a Map in the format "key=value" - one key per line.
-     * @param countedSymptom The Map to be written in the output file
+     * @param countedData The Map to be written in the output file
      */
-    public void outSymptom(Map<String, Integer> countedSymptom) {
+    public void outSymptom(Map<String, Integer> countedData) {
         if (this.filepath != null) {
             try {
                 FileWriter writer = new FileWriter(this.filepath);
-                for (String symptom : countedSymptom.keySet()) {
-                    writer.write(symptom + "=" + countedSymptom.get(symptom) + "\n");
+                for (String symptom : countedData.keySet()) {
+                    writer.write(symptom + "=" + countedData.get(symptom) + "\n");
                 }
                 writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
+                System.out.println("Please check the filepath OUT_FILE in FileConstant.java");
                 System.exit(-1);
             }
         }
