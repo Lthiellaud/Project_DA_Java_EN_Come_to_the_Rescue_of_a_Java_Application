@@ -18,8 +18,8 @@ public class WriteSymptomCountToFile implements ISymptomWriter {
         this.filepath=filepath;
     }
     /**
-     * Write in the result file the content of a TreeMap in the format "key=value" - one key per line.
-     * @param countedSymptom The TreeMap to be written in the output file
+     * Write in the result file the content of a Map in the format "key=value" - one key per line.
+     * @param countedSymptom The Map to be written in the output file
      */
     public void outSymptom(Map<String, Integer> countedSymptom) {
         if (this.filepath != null) {

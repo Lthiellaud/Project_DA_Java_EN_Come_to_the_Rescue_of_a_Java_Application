@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 /**
- * Reads a file containing a symptom by line (with duplication) and Write a sorted file containing the number of occurrence for each symptom read.
+ * Reads a file containing a symptom by line (with duplication) and
+ * writes a sorted file containing the number of occurrence for each symptom read.
  * <p> *
  * One line in the output file looks like : SymptomName=SymptomCounter
  * </p>
