@@ -6,5 +6,4 @@ package com.hemebiotech.analytics;
 public class FileConstant {
     public static final String IN_FILE = ".\\Project02Eclipse\\symptoms.txt";
     public static final String OUT_FILE = ".\\Project02Eclipse\\results.out";
-
 }
