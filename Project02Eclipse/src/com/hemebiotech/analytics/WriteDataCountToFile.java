@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Simple brute force implementation
+ * implementation of IDataWriter to write in a file defined by filepath (attribute of the class).
  *
  */
 public class WriteDataCountToFile implements IDataWriter {
@@ -18,10 +18,11 @@ public class WriteDataCountToFile implements IDataWriter {
         this.filepath=filepath;
     }
     /**
-     * Write in the result file the content of a Map in the format "key=value" - one key per line.
-     * @param countedData The Map to be written in the output file
+     * Write in the result file, the content of a Map in the format "key=value" - one key per line.
+     * @param countedData The Map to be written in the output file defined by filepath
      */
-    public void outSymptom(Map<String, Integer> countedData) {
+    @Override
+    public void outData(Map<String, Integer> countedData) {
         if (this.filepath != null) {
             try {
                 FileWriter writer = new FileWriter(this.filepath);
@@ -31,7 +32,7 @@ public class WriteDataCountToFile implements IDataWriter {
                 writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println("Please check the filepath OUT_FILE in FileConstant.java");
+                System.err.println("Please check the filepath OUT_FILE in FileConstant.java");
                 System.exit(-1);
             }
         }

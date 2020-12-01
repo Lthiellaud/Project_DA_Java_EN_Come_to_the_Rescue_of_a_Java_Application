@@ -25,13 +25,13 @@ public class AnalyticsCounter {
 		ReadSymptomDataFromFile readSymptom = new ReadSymptomDataFromFile(IN_FILE);
 		ArrayList<String> symptomList = (ArrayList<String>) readSymptom.getSymptoms();
 
-		// Sort and count the symptom
+		// Count and Sort the symptoms
 		CounterAndSorter symptomCounter = new CounterAndSorter();
 		TreeMap<String, Integer> countedAndSortedSymptom = symptomCounter.countAndSort(symptomList);
 
-		// Generate output file
+		// Generate the output file
 		WriteDataCountToFile writeSymptom = new WriteDataCountToFile(OUT_FILE);
-		writeSymptom.outSymptom(countedAndSortedSymptom);
+		writeSymptom.outData(countedAndSortedSymptom);
 
 	}
 }
