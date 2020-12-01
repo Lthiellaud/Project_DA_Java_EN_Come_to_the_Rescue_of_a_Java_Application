@@ -38,7 +38,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-				System.out.println("Please check the filepath IN_FILE in FileConstant.java");
+				System.err.println("Please check the filepath IN_FILE in FileConstant.java");
 				System.exit(-1);
 			}
 		}

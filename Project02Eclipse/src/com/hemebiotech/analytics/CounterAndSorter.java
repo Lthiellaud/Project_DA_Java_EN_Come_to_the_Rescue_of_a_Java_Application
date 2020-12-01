@@ -1,20 +1,21 @@
 package com.hemebiotech.analytics;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 /**
- * Returns a Sorted Map giving for each symptom met in a list, its number of occurrences.
+ * Returns a Sorted Map giving for each data met in a list, its number of occurrences.
  *
  */
-public class CounterAndSorter {
+public class CounterAndSorter implements ICounterAndSorter {
 
     /**
      *
-     * @param dataList list of symptom that may contain many duplications.
-     * @return a TreeMap (sorted map) giving for all symptom its number of occurrences in the list
+     * @param dataList list of data that may contain many duplications.
+     * @return a TreeMap (sorted map) giving for each data, its number of occurrences in the list
      */
-    public TreeMap<String, Integer> countAndSort(ArrayList<String> dataList) {
+    @Override
+    public TreeMap<String, Integer> countAndSort (List<String> dataList) {
         TreeMap<String, Integer> dataCounter = new TreeMap<>();
         if ( !dataList.isEmpty()) {
             for (String symptom : dataList) {
