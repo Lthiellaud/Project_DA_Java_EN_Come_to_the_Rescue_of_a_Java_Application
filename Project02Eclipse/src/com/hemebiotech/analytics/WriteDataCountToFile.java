@@ -25,8 +25,8 @@ public class WriteDataCountToFile implements IDataWriter {
     public void outData(Map<String, Integer> countedData) {
         if (this.filepath != null) {
             try (FileWriter writer = new FileWriter(this.filepath)) {
-                for (String symptom : countedData.keySet()) {
-                    writer.write(symptom + "=" + countedData.get(symptom) + "\n");
+                for (String data : countedData.keySet()) {
+                    writer.write(data + "=" + countedData.get(data) + "\n");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
