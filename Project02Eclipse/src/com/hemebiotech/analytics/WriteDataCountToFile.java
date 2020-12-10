@@ -24,12 +24,10 @@ public class WriteDataCountToFile implements IDataWriter {
     @Override
     public void outData(Map<String, Integer> countedData) {
         if (this.filepath != null) {
-            try {
-                FileWriter writer = new FileWriter(this.filepath);
+            try (FileWriter writer = new FileWriter(this.filepath)) {
                 for (String symptom : countedData.keySet()) {
                     writer.write(symptom + "=" + countedData.get(symptom) + "\n");
                 }
-                writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
                 System.err.println("Please check the filepath OUT_FILE in FileConstant.java");
